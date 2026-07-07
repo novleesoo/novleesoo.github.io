@@ -9,8 +9,9 @@ title: 首页
 
 ## 最新文章
 
-{% for post in site.posts %}
-- [{{ post.title }}]({{ post.url }}) — {{ post.date | date: "%Y-%m-%d" }}
+{% assign sorted_articles = site.articles | sort: "date" | reverse %}
+{% for article in sorted_articles %}
+- [{{ article.title }}]({{ article.url }}) — {{ article.date | date: "%Y-%m-%d" }}
 {% endfor %}
 
 更多历史文章请查看 [归档页面](/archive.html)，也欢迎了解 [关于本站](/about.html)。

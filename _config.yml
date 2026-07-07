@@ -1,4 +1,15 @@
 theme: jekyll-theme-cayman
 title: 我的博客
 description: 记录与分享的个人站点
-show_downloads: false
+
+collections:
+  articles:
+    output: true
+    permalink: /articles/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: articles
+    values:
+      layout: default
