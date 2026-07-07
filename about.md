@@ -1,18 +1,18 @@
 ---
 layout: default
-title: About
+title: 关于
 ---
 
-# About
+# 关于本站
 
-Write a short introduction about yourself here.
+这是一个用于记录笔记、整理思路、分享阶段性成果的个人站点。内容会随着时间推移不断补充和调整。
 
-## Interests
+## 站点说明
 
-- Topic one
-- Topic two
-- Topic three
+- 内容涵盖学习笔记、工具使用心得、阶段性总结等
+- 更新频率不固定，视具体情况而定
+- 欢迎交流与建议
 
-## Contact
+## 联系方式
 
-Add your preferred contact info here.
+可以在这里填写你希望公开的联系方式，例如邮箱或其他社交账号。

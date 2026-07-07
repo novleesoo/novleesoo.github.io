@@ -1,3 +1,4 @@
 theme: jekyll-theme-cayman
-title: My Blog
-description: A personal blog and notes site
+title: 我的博客
+description: 记录与分享的个人站点
+show_downloads: false

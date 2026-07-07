@@ -1,16 +1,16 @@
 ---
 layout: default
-title: Home
+title: 首页
 ---
 
-# Welcome
+# 欢迎来到我的站点
 
-This is a personal site where I share notes, ideas, and things I'm working on.
+这里用来记录一些想法、笔记与阶段性总结，内容会持续更新。
 
-## Latest Posts
+## 最新文章
 
 {% for post in site.posts %}
 - [{{ post.title }}]({{ post.url }}) — {{ post.date | date: "%Y-%m-%d" }}
 {% endfor %}
 
-Check out the [About](/about.html) page to learn more.
+更多历史文章请查看 [归档页面](/archive.html)，也欢迎了解 [关于本站](/about.html)。
