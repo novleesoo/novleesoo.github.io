@@ -5,7 +5,7 @@ description: 记录与分享的个人站点
 collections:
   articles:
     output: true
-    permalink: /_articles/:name.html
+    permalink: "/_articles:path:output_ext"
 
 defaults:
   - scope:
