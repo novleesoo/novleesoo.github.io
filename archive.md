@@ -1,6 +1,7 @@
 ---
 layout: default
 title: 归档
+nav_order: 2
 ---
 
 # 文章归档

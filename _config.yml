@@ -1,11 +1,65 @@
-theme: jekyll-theme-cayman
 title: 我的博客
 description: 记录与分享的个人站点
+url: "https://novleesoo.github.io"
+lang: zh-CN
 
+# 主题：Just the Docs（GitHub Pages 通过 jekyll-remote-theme 加载）
+remote_theme: just-the-docs/just-the-docs@v0.12.0
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+  - jekyll-include-cache
+  - jekyll-sitemap
+
+# 站内搜索
+search_enabled: true
+
+# 标题锚点，方便复制某个段落的链接
+heading_anchors: true
+
+# 导航按标题排序时不区分大小写
+nav_sort: case_insensitive
+
+# 页面底部“回到顶部”
+back_to_top: true
+back_to_top_text: "回到顶部"
+
+# 页面底部“在 GitHub 上编辑本页”
+gh_edit_link: true
+gh_edit_link_text: "在 GitHub 上编辑本页"
+gh_edit_repository: "https://github.com/novleesoo/novleesoo.github.io"
+gh_edit_branch: "master"
+gh_edit_view_mode: "tree"
+
+# 提示块配色，与 Just the Docs 默认值一致
+callouts:
+  highlight:
+    color: yellow
+  important:
+    title: 重要
+    color: blue
+  new:
+    title: 新增
+    color: green
+  note:
+    title: 说明
+    color: purple
+  warning:
+    title: 警告
+    color: red
+
+# 文章集合
 collections:
   articles:
     output: true
     permalink: "/_articles:path:output_ext"
+
+# 把文章集合挂到侧边栏导航
+just_the_docs:
+  collections:
+    articles:
+      name: 文章
 
 defaults:
   - scope:
