@@ -12,6 +12,9 @@ plugins:
   - jekyll-include-cache
   - jekyll-sitemap
 
+# 配色方案：soft（柔和浅色，默认）/ dim（柔和深色）/ dark（内置深色）/ light（内置浅色）
+color_scheme: soft
+
 # 站内搜索
 search_enabled: true
 

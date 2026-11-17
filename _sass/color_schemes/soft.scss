@@ -1,0 +1,24 @@
+// 柔和浅色配色：暖白底，降低背景亮度和整体对比度，长时间阅读不刺眼
+// 启用方式：_config.yml 中设置 color_scheme: soft
+
+// 背景与文字
+$body-background-color: #f7f5f0;
+$body-heading-color: #26221f;
+$body-text-color: #3d3833;
+$sidebar-color: #efece4;
+$border-color: #ddd6c9;
+
+// 链接与按钮
+$link-color: #2f6280;
+$nav-child-link-color: #4a443d;
+$base-button-color: #e9e4da;
+$btn-primary-color: #2f6280;
+
+// 代码、表格与搜索
+$code-background-color: #f1ede4;
+$table-background-color: #fbf9f5;
+$search-background-color: #fbf9f5;
+$search-result-preview-color: #3d3833;
+
+// 反馈组件
+$feedback-color: darken($sidebar-color, 3%);

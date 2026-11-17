@@ -1,0 +1,21 @@
+// 柔和深色配色：基于内置 dark，深灰底且正文不用纯白，对比度略低更耐看
+// 启用方式：_config.yml 中设置 color_scheme: dim
+@import "./color_schemes/dark";
+
+$body-background-color: #22252a;
+$sidebar-color: #22252a;
+$body-heading-color: #edeef0;
+$body-text-color: #c6c9ce;
+$nav-child-link-color: #a9adb4;
+$link-color: #8ab4f8;
+$border-color: #363a41;
+
+$base-button-color: #2d3137;
+$btn-primary-color: #264caf;
+
+$code-background-color: #1b1e22;
+$table-background-color: #2a2e34;
+$search-background-color: #2a2e34;
+$search-result-preview-color: #c6c9ce;
+
+$feedback-color: darken($sidebar-color, 3%);
