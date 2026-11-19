@@ -1,0 +1,100 @@
+---
+layout: table_wrappers
+---
+
+<!DOCTYPE html>
+
+<html lang="{{ site.lang | default: 'en-US' }}">
+{% include head.html %}
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  {% include icons/icons.html %}
+  {% if page.nav_enabled == true %}
+    {% include components/sidebar.html %}
+  {% elsif layout.nav_enabled == true and page.nav_enabled == nil %}
+    {% include components/sidebar.html %}
+  {% elsif site.nav_enabled != false and layout.nav_enabled == nil and page.nav_enabled == nil %}
+    {% include components/sidebar.html %}
+  {% endif %}
+  <div class="main" id="top">
+    {% include components/header.html %}
+    <div class="main-content-wrap">
+      {% include components/breadcrumbs.html %}
+      <div class="main-content-layout">
+        <div id="main-content" class="main-content">
+          <main>
+            {% if site.heading_anchors != false %}
+              {% include vendor/anchor_headings.html html=content beforeHeading="true" anchorBody="<svg viewBox=\"0 0 16 16\" aria-hidden=\"true\"><use xlink:href=\"#svg-link\"></use></svg>" anchorClass="anchor-heading" anchorAttrs="aria-labelledby=\"%html_id%\"" %}
+            {% else %}
+              {{ content }}
+            {% endif %}
+
+            {% if page.has_toc != false %}
+              {% include components/children_nav.html %}
+            {% endif %}
+          </main>
+          {% include components/footer.html %}
+        </div>
+        <aside class="toc-sidebar" aria-label="本页目录">
+          <div class="toc-sidebar-title">本页目录</div>
+          <nav id="toc-nav"></nav>
+        </aside>
+      </div>
+    </div>
+    {% if site.search_enabled != false %}
+      {% include components/search_footer.html %}
+    {% endif %}
+  </div>
+
+  {% if site.mermaid %}
+    {% include components/mermaid.html %}
+  {% endif %}
+  <script>
+  (function () {
+    var content = document.getElementById('main-content');
+    var nav = document.getElementById('toc-nav');
+    var aside = document.querySelector('.toc-sidebar');
+    if (!content || !nav) { return; }
+    var headings = content.querySelectorAll('h2, h3');
+    if (!headings.length) {
+      if (aside) { aside.style.display = 'none'; }
+      return;
+    }
+    var list = document.createElement('ul');
+    list.className = 'toc-list';
+    headings.forEach(function (h) {
+      if (!h.id) { return; }
+      var li = document.createElement('li');
+      li.className = 'toc-item toc-item-' + h.tagName.toLowerCase();
+      var a = document.createElement('a');
+      a.href = '#' + h.id;
+      a.textContent = h.textContent;
+      li.appendChild(a);
+      list.appendChild(li);
+    });
+    nav.appendChild(list);
+
+    var links = nav.querySelectorAll('a');
+    var targets = [];
+    links.forEach(function (a) {
+      targets.push(document.getElementById(a.getAttribute('href').slice(1)));
+    });
+
+    function updateActive() {
+      var currentIndex = -1;
+      for (var i = 0; i < targets.length; i++) {
+        if (targets[i] && targets[i].getBoundingClientRect().top <= 96) {
+          currentIndex = i;
+        }
+      }
+      links.forEach(function (a, i) {
+        a.classList.toggle('active', i === currentIndex);
+      });
+    }
+
+    window.addEventListener('scroll', updateActive, { passive: true });
+    updateActive();
+  })();
+  </script>
+</body>
+</html>

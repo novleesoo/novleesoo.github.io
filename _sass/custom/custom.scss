@@ -1,0 +1,77 @@
+// 右侧目录导航（仅在大屏显示）
+// 说明：目录由 _layouts/default.html 中的脚本自动生成，无需在 Markdown 里写任何配置
+
+$toc-width: 14rem;
+
+// 在大屏上把内容区加宽，给右侧目录留出空间
+.main {
+  @include mq(lg) {
+    max-width: $content-width + $toc-width + $sp-8;
+  }
+}
+
+.main-content-layout {
+  @include mq(lg) {
+    display: flex;
+    align-items: flex-start;
+  }
+}
+
+.main-content {
+  @include mq(lg) {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+}
+
+.toc-sidebar {
+  display: none;
+
+  @include mq(lg) {
+    display: block;
+    flex: 0 0 $toc-width;
+    margin-left: $sp-8;
+    position: sticky;
+    top: $sp-6;
+    max-height: calc(100vh - #{$sp-6 * 2});
+    overflow-y: auto;
+  }
+}
+
+.toc-sidebar-title {
+  margin-bottom: $sp-3;
+  color: $body-heading-color;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  @include fs-2;
+}
+
+.toc-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.toc-item a {
+  display: block;
+  padding: $sp-1 $sp-2;
+  color: $nav-child-link-color;
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  @include fs-2;
+
+  &:hover {
+    color: $link-color;
+  }
+
+  &.active {
+    color: $link-color;
+    border-left-color: $link-color;
+    font-weight: 600;
+  }
+}
+
+.toc-item-h3 {
+  padding-left: $sp-4;
+}
